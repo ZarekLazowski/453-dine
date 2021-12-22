@@ -1,0 +1,33 @@
+Zarek Lazowski
+
+USER INFO:
+This program 'dine' exhibits my solution to the dining philosophers problem.
+My solution uses semaphores to lock out philosophers from forks, as well as
+the updating function, so that only one philosopher provides updates at a time.
+
+Updates are provided to the user in real time through stdout. Each column 
+represents a philosopher and details their current status (eating, thinking, or
+changing). Each run is randomly seeded so that philosophers wait a random 
+amount of time before they stop eating or stop thinking. By default the number
+of philosophers is 5 and the number of cycles is 1. These both can be changed
+by the user.
+
+This was created in a virtual Ubuntu x86 environment, and is not intended
+to run outside of a unix-based system.
+
+INSTRUCTIONS:
+The provided makefile creates the executable 'dine'. 
+
+The program has one optional argument which defines how many cycles of eating 
+and thinking the philosophers go through. If no number is provided, the default
+is 1.
+
+By defining NUM_PHILOSPHERS as a number other than 5, it is possible to add
+more philosophers the program, and therefore more columns. This is fine for
+numbers below 10, there are issues for numbers above 10. 
+
+ISSUES:
+With philosophers > 10, columns start shifting over, since I use
+a single '-' to show not holding that fork, but if the number takes 2 digits to
+print, then the field would be too wide. If I had more time to think about
+this, I would probably work more on the updating portion of my code.
